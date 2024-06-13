@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+for i in `curl https://www.cloudflare.com/ips-v4`; do sudo ufw allow proto tcp from $i comment 'CF IP'; done
+for i in `curl https://www.cloudflare.com/ips-v6`; do sudo ufw allow proto tcp from $i comment 'CF IP'; done
